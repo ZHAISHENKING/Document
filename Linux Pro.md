@@ -4,6 +4,10 @@
 >
 > 适用人群：了解基础命令，想来看看其他命令有什么奇淫技巧可以挖掘的人
 
+目录
+
+[TOC]
+
 ### 感觉比较常用或有用的liunx命令
 
 ```bash
@@ -146,4 +150,152 @@ mac没有这个命令。。
    替换文本文件中的字符`tr[old][new]`
 
    <img src="http://qiniu.s001.xin/9zyco.jpg">
+
+4. wc
+
+   统计指定文本行数、字数、字节数`wc[参数]文本`
+
+   <img src="http://qiniu.s001.xin/4s8ij.jpg">
+
+   统计系统当前有多少用户
+
+   <img src="http://qiniu.s001.xin/xxu4s.jpg">
+
+5. stat
+
+   查看文件具体存储信息和时间
+
+   <img src="http://qiniu.s001.xin/xeth6.jpg">
+
+6. `cut`
+
+   按列提取文本`cut[参数]文本`
+
+   列出系统中的用户名
+
+   <img src="http://qiniu.s001.xin/l0j1w.jpg">
+
+7. dd
+
+   复制或转换指定大小的文件
+
+   <img src="http://qiniu.s001.xin/fkznh.jpg">
+
+   生成一个大小500M,名为x_file的文件
+
+   <img src="http://qiniu.s001.xin/f61pt.jpg">
+
+8. file
+
+   查看文件类型 `file 文件名`
+
+**打包压缩**
+
+1. `tar`
+
+   <img src="http://qiniu.s001.xin/6ot63.jpg">
+
+   注: -f参数必须放在最后一位,是压缩或解压的软件包名
+
+   常用做法:
+
+   `tar -czvf 压缩包名.tar.gz 打包目录`
+
+   `tar -xzvf 压缩包名.tar.gz`
+
+2. `grep`
+
+   关键词搜索
+
+   <img src="http://qiniu.s001.xin/th1bt.jpg">
+
+   工作中常用两个参数  -v 反选 -n 显示行号
+
+3. find
+
+   查找。。这个是最常用但是最不会用的命令了
+
+   `find [查找路径] 寻找条件 操作`
+
+   <img src="http://qiniu.s001.xin/g1ho2.jpg">
+
+   <img src="http://qiniu.s001.xin/016hh.jpg">
+
+   **重点**说明一下 -exec参数，类似于管道操作
+
+   获取该目录中所有以host开头的文件列表
+
+   <img src="http://qiniu.s001.xin/69s6o.jpg" width="500">
+
+   <img src="http://qiniu.s001.xin/5jbo0.jpg">
+
+### 管道符、重定向、环境变量
+
+> 这块应该算是重点了，用好了会达到事半功倍的效果
+
+**重定向**
+
+<img src="http://qiniu.s001.xin/bh5ck.jpg">
+
+这块给我的感觉像是日志，错误输出、标准输出等等
+
+<img src="http://qiniu.s001.xin/998br.jpg">
+
+例：man bash > readme.txt
+
+标准输出重定向   将打印内容写入readme.txt
+
+覆盖 
+
+<img src="http://qiniu.s001.xin/7fef8.jpg" width="500">
+
+追加
+
+<img src="http://qiniu.s001.xin/syb1f.jpg" width="500">
+
+写入报错信息
+
+ls -l xxx 2> xxx
+
+<img src="http://qiniu.s001.xin/flwln.jpg">
+
+**管道**
+
+命令A | 命令B
+
+用翻页的方式查看
+
+`ls -l /etc/ | more`
+
+通过把管道符和 passwd 命令的--stdin 参数相结合，我们可以用一条 命令来完成密码重置操作 
+
+`echo "linuxprobe" | passwd --stdin root `
+
+**通配符**
+
+这个像是正则，很容易理解
+
+<img src="http://qiniu.s001.xin/17iqm.jpg">
+
+**最常用的转义字符**
+
+<img src="http://qiniu.s001.xin/2hlsd.jpg" width="500">
+
+<img src="http://qiniu.s001.xin/cyl16.jpg" width="500">
+
+需要某个命令的输出值时,可以使用``将命令包起来
+
+<img src="http://qiniu.s001.xin/qhkbl.jpg">
+
+
+
+
+
+===============
+
+待更,困了
+
+===============
+
+
 
