@@ -1,0 +1,7 @@
+ssh -i ~/.ssh/tencentkey ubuntu@118.89.177.145
+
+# 启动psql
+/usr/local/bin/pg_ctl -D /usr/local/var/postgres/post -l logfile start
+
+# 启动docker postgresql
+docker run -it -d -e --name oj-postgres POSTGRES_DB=onlinejudge -e POSTGRES_USER=onlinejudge -e POSTGRES_PASSWORD=onlinejudge -p 127.0.0.1:5432:5432 postgres:10
