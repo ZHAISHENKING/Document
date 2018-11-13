@@ -5,3 +5,9 @@ ssh -i ~/.ssh/tencentkey ubuntu@118.89.177.145
 
 # 启动docker postgresql
 docker run -it -d -e --name oj-postgres POSTGRES_DB=onlinejudge -e POSTGRES_USER=onlinejudge -e POSTGRES_PASSWORD=onlinejudge -p 127.0.0.1:5432:5432 postgres:10
+
+# 进入运行中的psql
+docker exec -it oj-postgres psql -U onlinejudge
+
+# 导入sql文件
+docker exec -i oj-postgres psql -U onlinejudge onlinejudge < db.sql
